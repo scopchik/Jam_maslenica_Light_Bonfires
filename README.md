@@ -1,2 +1,4 @@
-# jam_maslennica
-The first prototype in the Silent Flight studio based on a ready-made project
+<h1>Light Bonfires</h1>
+<img src = "Assets/Sprites/LightBonfires.png">
+Ссылка на скачивание игры
+https://eugene-skopin.itch.io/light-bonfire
