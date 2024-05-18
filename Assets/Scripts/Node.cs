@@ -26,6 +26,7 @@ public class Node : MonoBehaviour
     [Header("Optional")]
 
     public HouseBlueprint building;
+
     private MeshRenderer rend;
     private Color startColor;
 
@@ -102,14 +103,17 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+			return;
+		}
+        if (!_buildManager.CanBuild)
+        {
             return;
-        if(!_buildManager.CanBuild)
-            return;
+        }
         if(building != null)
         {
             Debug.Log("Can't build there!");
-            
             return;
         }
         

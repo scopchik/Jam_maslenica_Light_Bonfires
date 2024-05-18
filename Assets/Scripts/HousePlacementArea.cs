@@ -38,8 +38,10 @@ public class HousePlacementArea : MonoBehaviour
 	public Vector3 GridToWorld(Vector2Int gridPosition, Vector2Int sizeOffset)
 	{
 		// Calculate scaled local position
-		Vector3 localPos = new Vector3(gridPosition.x + (sizeOffset.x * 0.5f), 0, gridPosition.y + (sizeOffset.y * 0.5f)) *
-						   gridSize;
+		Vector3 localPos = new Vector3(
+			gridPosition.x + (sizeOffset.x * 0.5f), 
+			0, 
+			gridPosition.y + (sizeOffset.y * 0.5f)) * gridSize;
 
 		return transform.TransformPoint(localPos);
 	}

@@ -23,25 +23,29 @@ public class PlacementTile : MonoBehaviour
 	}
 	public void SetState(PlacementTileState newState)
 	{
-		switch (newState)
+		if(tileRenderer != null)
 		{
-			case PlacementTileState.Filled:
-				if (tileRenderer != null && filledMaterial != null)
-					tileRenderer.sharedMaterial = filledMaterial;
+			switch (newState)
+			{
+				case PlacementTileState.Filled:
+					if (filledMaterial != null)
+						tileRenderer.sharedMaterial = filledMaterial;
 
-				break;
+					break;
 
-			case PlacementTileState.Empty:
-				if (tileRenderer != null && emptyMaterial != null)
-					tileRenderer.sharedMaterial = emptyMaterial;
+				case PlacementTileState.Empty:
+					if (emptyMaterial != null)
+						tileRenderer.sharedMaterial = emptyMaterial;
 
-				break;
+					break;
 
-			case PlacementTileState.Infected:
-				if (tileRenderer != null & infectedMaterial != null)
-					tileRenderer.sharedMaterial = infectedMaterial;
-				break;
+				case PlacementTileState.Infected:
+					if (infectedMaterial != null)
+						tileRenderer.sharedMaterial = infectedMaterial;
+					break;
+			}
 		}
+		
 	}
 
 	public Node TakeNode()

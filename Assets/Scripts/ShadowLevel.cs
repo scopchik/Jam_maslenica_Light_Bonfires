@@ -39,7 +39,6 @@ public class ShadowLevel : MonoBehaviour
                 dark.DestroyHouse();
             }
             _timer += Time.deltaTime;
-
         }
 
         if (fireStatus.fillAmount == 1f)

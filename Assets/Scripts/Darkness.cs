@@ -11,22 +11,19 @@ public class Darkness : MonoBehaviour
     [SerializeField] private Node _node;
     [SerializeField] private int _countMultiply;
     [SerializeField] private HouseBlueprint building;
-    
-
 
     private void Start()
     {
         _tile = _house.m_Tiles;
         GetIndexesOfNodes();
     }
+
     private void GetIndexesOfNodes()
     {
         foreach(var tile in _tile)
         {
             _indexOfNode = tile.TileIndex;
         }
-
-        
     }
 
     public void SetRandomDark()
@@ -48,7 +45,7 @@ public class Darkness : MonoBehaviour
         _infectedTile.Destroying(); 
     }
 
-    private void AddSquareEffect(Node startPoint, int countMultiply) //countMultiply = количество слоев квадрата
+    private void AddSquareEffect(Node startPoint, int countMultiply)
     {
         
         for (int i = startPoint.GetNodeIndex().x - countMultiply; i <= startPoint.GetNodeIndex().x + countMultiply; i++)
@@ -59,13 +56,12 @@ public class Darkness : MonoBehaviour
             for (int j = startPoint.GetNodeIndex().y - countMultiply; j <= startPoint.GetNodeIndex().y + countMultiply; j++)
             {
                 if (j < 0 || j > _house.dimensions.y - 1)
+                {
                     continue;
-
-                var _node = _house.m_Tiles[i, j].TakeNode();
+                }
+                Node _node = _house.m_Tiles[i, j].TakeNode();
                 _node.Infected();
             }
         }
     }
-
-
 }

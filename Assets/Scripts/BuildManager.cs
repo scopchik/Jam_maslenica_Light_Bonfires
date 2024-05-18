@@ -6,10 +6,11 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
     public HouseBlueprint house;
     public HousePlacementArea Area;
-    private HouseBlueprint houseToBuild;
+	public UnityEvent<HouseBlueprint> HouseBuilded;
+
+	private HouseBlueprint houseToBuild;
     private PlayerStats _player;
 
-    public UnityEvent<HouseBlueprint> HouseBuilded;
 
     private void Awake()
     {

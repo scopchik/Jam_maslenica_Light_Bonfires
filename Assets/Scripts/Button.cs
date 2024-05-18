@@ -7,6 +7,5 @@ public class Button : MonoBehaviour
     public void GoToLevel()
     {
         SceneManager.LoadScene(number);
-    }
-    
+    }   
 }
